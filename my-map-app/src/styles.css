@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+.search-container {
+  width: 250px;
+  position: relative;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 6px;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 33px;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.autocomplete-item {
+  padding: 6px;
+  cursor: pointer;
+}
+.autocomplete-item:hover {
+  background: #eee;
+}
+
+.filters button {
+  padding: 6px 10px;
+  margin-right: 6px;
+  margin-top: 8px;
+  cursor: pointer;
+}
