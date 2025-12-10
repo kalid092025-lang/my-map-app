@@ -15,12 +15,30 @@ export default function Search({ onSelect }) {
 
     setResults(data.features || []);
   };
+const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (results[0]) {
+        // Select first result automatically
+        onSelect({
+          lat: results[0].properties.lat,
+          lon: results[0].properties.lon,
+        });
+        setText(results[0].properties.formatted);
+        setResults([]);
+      } else {
+        // If no results, do a search
+        search(text);
+      }
+    }
+  };
+
 
   return (
     <div className="search-container">
       <input
         value={text}
         onChange={(e) => search(e.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="Søk sted…"
       />
 

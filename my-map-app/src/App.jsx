@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Map from "./components/Map";
 import Search from "./components/Search";
 import Filters from "./components/Filters";
 
+
 export default function App() {
   const API_KEY = import.meta.env.VITE_GEOAPIFY_KEY;
+
+  
 
   const [center, setCenter] = useState({ lat: 59.91, lon: 10.75 });
   const [category, setCategory] = useState(null);
   const [places, setPlaces] = useState([]);
-
 
   useEffect(() => {
     if (!category) return;
@@ -31,12 +33,11 @@ export default function App() {
   }, [category, center]);
 
   return (
-    <div>
-      <h2>Google Maps Lite</h2>
-
-      <Search onSelect={(loc) => setCenter(loc)} />
-
-      <Filters onSelect={(cat) => setCategory(cat)} />
+    <div style={{ height: "100%", position: "relative" }}>
+      <div className="controls">
+        <Search onSelect={(loc) => setCenter(loc)} />
+        <Filters onSelect={(cat) => setCategory(cat)} />
+      </div>
 
       <Map center={center} places={places} />
     </div>

@@ -1,46 +1,80 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+/* Full page */
+html, body, #root {
+  height: 100%;
+  margin: 0;
 }
 
+/* Map full-screen */
 #map {
-  height: 500px;
+  height: 100%;
   width: 100%;
+}
+.leaflet-tooltip {
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
-  margin-top: 15px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
 }
 
-.search-container {
-  width: 250px;
-  position: relative;
+/* Floating toolbar */
+.controls {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  align-items: center;
 }
 
+/* Search input */
 .search-container input {
-  width: 100%;
-  padding: 6px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
 }
 
+/* Autocomplete dropdown */
 .autocomplete-list {
   position: absolute;
-  top: 33px;
+  top: 36px;
   left: 0;
   right: 0;
   background: white;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
   z-index: 1000;
 }
 
 .autocomplete-item {
-  padding: 6px;
+  padding: 6px 10px;
   cursor: pointer;
 }
 .autocomplete-item:hover {
   background: #eee;
 }
 
+/* Filters buttons */
 .filters button {
-  padding: 6px 10px;
-  margin-right: 6px;
-  margin-top: 8px;
+  padding: 6px 12px;
   cursor: pointer;
+  border: none;
+  background-color: #4285f4;
+  color: white;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.filters button:hover {
+  background-color: #357ae8;
 }
