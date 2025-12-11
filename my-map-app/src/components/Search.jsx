@@ -18,7 +18,7 @@ export default function Search({ onSelect }) {
 const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       if (results[0]) {
-        // Select first result automatically
+        
         onSelect({
           lat: results[0].properties.lat,
           lon: results[0].properties.lon,
@@ -26,7 +26,7 @@ const handleKeyDown = (e) => {
         setText(results[0].properties.formatted);
         setResults([]);
       } else {
-        // If no results, do a search
+      
         search(text);
       }
     }
