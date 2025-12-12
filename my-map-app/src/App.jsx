@@ -30,7 +30,7 @@ export default function App() {
         }));
         setPlaces(formatted);
       });
-  }, [category, center]);
+  }, [category, center,API_KEY]);
 
   return (
     <div style={{ height: "100%", position: "relative" }}>
