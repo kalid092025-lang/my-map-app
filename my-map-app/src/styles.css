@@ -30,7 +30,7 @@ html, body, #root {
   gap: 10px;
   background: rgba(255, 255, 255, 0.95);
   
-  border-radius: 8px;
+  border-radius: 7px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.3);
   align-items: center;
 }
